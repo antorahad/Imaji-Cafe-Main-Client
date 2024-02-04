@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "name": "Valentine's Day Couple Coffee Date",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Specialty coffee for couples", "Live acoustic music", "Romantic ambiance"],
+      "image": "valentines_day_couple_event.jpg",
+      "event_duration": "1 day",
+      "event_start_date": "2024-02-14"
+    },
+    {
+      "id": 2,
+      "name": "Art and Espresso Night",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Art exhibition", "Exclusive espresso blends", "Local artist performances"],
+      "image": "art_and_espresso_night.jpg",
+      "event_duration": "3 days",
+      "event_start_date": "2024-03-01"
+    },
+    {
+      "id": 3,
+      "name": "Bookworm Brunch",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Book exchange", "Gourmet brunch menu", "Quiet reading corners"],
+      "image": "bookworm_brunch.jpg",
+      "event_duration": "2 days",
+      "event_start_date": "2024-04-10"
+    },
+    {
+      "id": 4,
+      "name": "Game Night Gathering",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Board games and card tournaments", "Specialty game-themed drinks", "Prizes for winners"],
+      "image": "game_night_gathering.jpg",
+      "event_duration": "2 days",
+      "event_start_date": "2024-05-15"
+    },
+    {
+      "id": 5,
+      "name": "Coffee and Canvas Workshop",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Canvas painting class", "Complimentary coffee for participants", "Artistic atmosphere"],
+      "image": "coffee_and_canvas_workshop.jpg",
+      "event_duration": "1 day",
+      "event_start_date": "2024-06-20"
+    },
+    {
+      "id": 6,
+      "name": "Tropical Smoothie Tasting",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Refreshing tropical smoothies", "Smoothie-making demo", "Live fruit carving"],
+      "image": "tropical_smoothie_tasting.jpg",
+      "event_duration": "2 days",
+      "event_start_date": "2024-07-05"
+    },
+    {
+      "id": 7,
+      "name": "Culinary Delights Festival",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["International culinary treats", "Live cooking demonstrations", "Food tasting stations"],
+      "image": "culinary_delights_festival.jpg",
+      "event_duration": "5 days",
+      "event_start_date": "2024-08-12"
+    },
+    {
+      "id": 8,
+      "name": "Jazz and Java Night",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Live jazz performances", "Specialty coffee pairings", "Cozy jazz club atmosphere"],
+      "image": "jazz_and_java_night.jpg",
+      "event_duration": "3 days",
+      "event_start_date": "2024-09-22"
+    },
+    {
+      "id": 9,
+      "name": "Tea Time Tales",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Storytelling sessions", "Exquisite tea varieties", "Cozy storytelling corners"],
+      "image": "tea_time_tales.jpg",
+      "event_duration": "2 days",
+      "event_start_date": "2024-10-08"
+    },
+    {
+      "id": 10,
+      "name": "Summer Sips Fiesta",
+      "place": "Imaji Cafe, Dhaka",
+      "features": ["Chilled summer beverages", "Live DJ with summer tunes", "Cool outdoor seating"],
+      "image": "summer_sips_fiesta.jpg",
+      "event_duration": "3 days",
+      "event_start_date": "2024-11-15"
+    }
+  ]
+  
