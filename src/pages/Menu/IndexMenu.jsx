@@ -92,7 +92,7 @@ const IndexMenu = () => {
                     <option value="200-300">From $200 to $300</option>
                 </select>
             </div>
-            <div className="my-5 flex flex-wrap items-center justify-center gap-5">
+            <div className="my-5 flex flex-wrap items-center justify-center gap-3">
                 <button
                     onClick={() => handleCategoryFilter('All')}
                     className={selectedCategory === 'All' ? "bg-custom hover:bg-custom focus:bg-custom border-none outline-none btn px-5 text-white rounded-md" : "btn px-5 rounded-md"}
