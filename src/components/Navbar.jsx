@@ -67,9 +67,8 @@ const Navbar = () => {
                                                             user.email
                                                     }
                                                 </li>
-                                                <li className="py-2"><Link>Orders</Link></li>
-                                                <li className="py-2"><Link>Events</Link></li>
-                                                <li className="py-2"><Link>Cart</Link></li>
+                                                <li className="py-2"><Link>Booked Orders</Link></li>
+                                                <li className="py-2"><Link>Booked Events</Link></li>
                                                 <li className="py-2">
                                                     <button onClick={logOut}>Sign Out</button>
                                                 </li>
@@ -106,9 +105,8 @@ const Navbar = () => {
                                                         user.email
                                                 }
                                             </li>
-                                            <li className="py-2"><Link>Orders</Link></li>
-                                            <li className="py-2"><Link>Events</Link></li>
-                                            <li className="py-2"><Link>Cart</Link></li>
+                                            <li className="py-2"><Link>Booked Orders</Link></li>
+                                            <li className="py-2"><Link>Booked Events</Link></li>
                                             <li className="py-2">
                                                 <button onClick={logOut}>Sign Out</button>
                                             </li>

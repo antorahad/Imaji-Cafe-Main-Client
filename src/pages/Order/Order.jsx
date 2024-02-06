@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../authprovider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Order = () => {
     const { user } = useContext(AuthContext);
@@ -43,6 +44,26 @@ const Order = () => {
         }
 
         console.log(newOrder);
+
+        fetch('http://localhost:5000/orders', {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newOrder)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: "Success",
+                    text: "Order has been taken",
+                    icon: "success"
+                });
+                form.reset()
+            }
+        })
     }
 
     return (
