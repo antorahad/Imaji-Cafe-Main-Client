@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 const MenuHome = () => {
     const [featuredMenu, setFeaturedMenu] = useState([]);
     useEffect(() => {
-        fetch('menu.json')
+        fetch('http://localhost:5000/items')
         .then(res=> res.json())
         .then(data => setFeaturedMenu(data))
         AOS.init()

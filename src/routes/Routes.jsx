@@ -7,6 +7,8 @@ import SignIn from "../pages/Auth/SignIn";
 import SignUp from "../pages/Auth/SignUp";
 import IndexEvent from "../pages/Event/IndexEvent";
 import IndexBlog from "../pages/Blog/IndexBlog";
+import Order from "../pages/Order/Order";
+import PrivateProvider from "../private/PrivateProvider";
   
   const router = createBrowserRouter([
     {
@@ -18,33 +20,43 @@ import IndexBlog from "../pages/Blog/IndexBlog";
             path: '/',
             element: <IndexHome/>
         },
-        // Home Details
-        {
-            path: '/homedetails/:id',
-            element: <HomeDetails/>,
-        },
         // Menu
         {
-            path: '/menu',
+            path: 'menu',
             element: <IndexMenu/>,
+            loader: () => fetch('http://localhost:5000/items')
         },
+         // Home Details
+         {
+          path: 'homedetails/:id',
+          element: <PrivateProvider><HomeDetails/></PrivateProvider>,
+          loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+      },
+      // Order
+      {
+        path: 'order/:id',
+        element: <PrivateProvider><Order/></PrivateProvider>,
+        loader: ({params}) => fetch(`http://localhost:5000/items/${params.id}`)
+      },
         // Event 
         {
-            path: '/event',
-            element: <IndexEvent/>
+            path: 'event',
+            element: <IndexEvent/>,
+            loader: () => fetch('http://localhost:5000/events')
         },
         // Blog
         {
-            path: '/blog',
-            element: <IndexBlog/>
+            path: 'blog',
+            element: <IndexBlog/>,
+            loader: () => fetch('http://localhost:5000/blogs')
         },
         // Auth
         {
-            path: '/signin',
+            path: 'signin',
             element: <SignIn/>
         },
         {
-            path: '/signup',
+            path: 'signup',
             element: <SignUp/>
         },
       ]

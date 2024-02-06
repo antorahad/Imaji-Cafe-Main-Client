@@ -4,7 +4,7 @@ import { AuthContext } from "../../authprovider/AuthProvider";
 import Swal from "sweetalert2";
 
 const SignUp = () => {
-    const {signUp} = useContext(AuthContext);
+    const { signUp } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     const handleSignUp = e => {
@@ -13,18 +13,34 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         signUp(email, password)
-        .then(result => {
-            console.log(result.user);
-            Swal.fire({
-                title: "Congratulation",
-                text: "Your account has been created",
-                icon: "success"
-            });
-            navigate(location?.state ? location.state : '/');
-        })
-        .catch(error => {
-            console.log(error.message);
-        })
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    title: "Congratulation",
+                    text: "Your account has been created",
+                    icon: "success"
+                });
+                navigate(location?.state ? location.state : '/');
+                const email = result.user.email;
+                const creatAt = result.user.metadata.creationTime;
+
+                const newUser = {
+                    email,
+                    creatAt
+                }
+                fetch('http://localhost:5000/users', {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                    .then(res => res.json())
+                    .then(data => console.log(data))
+            })
+            .catch(error => {
+                console.log(error.message);
+            })
     }
     return (
         <div className="min-h-screen flex flex-col items-center justify-center px-5 py-10">

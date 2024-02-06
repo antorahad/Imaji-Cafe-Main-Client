@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FeatureBlogHome from "../Home/FeatureBlogHome";
+import { useLoaderData } from "react-router-dom";
 
 const IndexBlog = () => {
-    const [blogs, setBlogs] = useState([]);
-    useEffect(()=> {
-        fetch('blog.json')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
-    }, [])
+    const laodBlogs = useLoaderData();
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
-    const totalPages = Math.ceil(blogs.length / itemsPerPage);
+    const totalPages = Math.ceil(laodBlogs.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = blogs.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = laodBlogs.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);

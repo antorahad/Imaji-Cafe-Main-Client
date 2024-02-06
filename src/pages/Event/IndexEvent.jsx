@@ -1,19 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FeatureEventHome from "../Home/FeatureEventHome";
+import { useLoaderData } from "react-router-dom";
 
 const IndexEvent = () => {
-    const [events, setEvents] = useState([]);
-    useEffect(()=> {
-        fetch('event.json')
-        .then(res => res.json())
-        .then(data => setEvents(data))
-    }, [])
+    const loadEvents = useLoaderData();
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 4;
-    const totalPages = Math.ceil(events.length / itemsPerPage);
+    const totalPages = Math.ceil(loadEvents.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = events.slice(indexOfFirstItem, indexOfLastItem);
+    const currentItems = loadEvents.slice(indexOfFirstItem, indexOfLastItem);
 
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);

@@ -2,18 +2,14 @@ import { useEffect, useState } from "react";
 import { AiOutlineFileSearch } from "react-icons/ai";
 import FeatureMenuHome from "../Home/FeatureMenuHome";
 import Error404 from "../../assets/404.gif";
+import { useLoaderData } from "react-router-dom";
 
 const IndexMenu = () => {
-    const [menu, setMenu] = useState([]);
-    useEffect(() => {
-        fetch('menu.json')
-            .then(res => res.json())
-            .then(data => setMenu(data))
-    }, []);
+    const loadMenu = useLoaderData();
 
     const [categories, setCategories] = useState([]);
     useEffect(() => {
-        fetch('category.json')
+        fetch('http://localhost:5000/categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, []);
@@ -40,12 +36,11 @@ const IndexMenu = () => {
         setCurrentPage(1);
     };
 
-    const filteredItems = menu
-        .filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
+    const filteredItems = loadMenu
+        .filter(item => item.name && item.name.toLowerCase().includes(search.toLowerCase()))
         .filter(item => selectedCategory === 'All' || item.category === selectedCategory)
-        .filter((item) => {
+        .filter(item => {
             const [min, max] = sort.split('-').map(Number);
-
             if (min && max) {
                 return item.price >= min && item.price <= max;
             } else if (min) {
@@ -53,9 +48,9 @@ const IndexMenu = () => {
             } else if (max) {
                 return item.price <= max;
             }
-
             return true;
         });
+
 
     const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
     const indexOfLastItem = currentPage * itemsPerPage;

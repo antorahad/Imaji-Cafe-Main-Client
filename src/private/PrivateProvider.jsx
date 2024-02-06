@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { AuthContext } from '../provider/AuthProvider';
+import { AuthContext } from '../authprovider/AuthProvider';
 import { Navigate } from 'react-router-dom';
 const PrivateProvider = ({ children }) => {
-    const { user, loading } = useContext(AuthContext)
+    const { user, loading } = useContext(AuthContext);
 
 
     if (loading) {

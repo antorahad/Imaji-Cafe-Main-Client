@@ -31,9 +31,9 @@ const Navbar = () => {
                         menuToggle &&
                         <ul className="lg:hidden text-lg absolute top-20 left-0 w-full bg-white border-b p-5 text-center z-20">
                             <li className="py-3"><Link to={'/'}>Home</Link></li>
-                            <li className="py-3"><Link to={'/menu'}>Menu</Link></li>
-                            <li className="py-3"><Link to={'/event'}>Events</Link></li>
-                            <li className="py-3"><Link to={'/blog'}>Blog</Link></li>
+                            <li className="py-3"><Link to={'menu'}>Menu</Link></li>
+                            <li className="py-3"><Link to={'event'}>Events</Link></li>
+                            <li className="py-3"><Link to={'blog'}>Blog</Link></li>
                         </ul>
                     }
                     <Link className="text-2xl font-semibold">Imaji <span className="text-custom">Cafe.</span></Link>
@@ -41,9 +41,9 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <ul className="hidden lg:flex items-center text-lg">
                         <li className="px-3"><Link to={'/'}>Home</Link></li>
-                        <li className="px-3"><Link to={'/menu'}>Menu</Link></li>
-                        <li className="px-3"><Link to={'/event'}>Events</Link></li>
-                        <li className="px-3"><Link to={'/blog'}>Blog</Link></li>
+                        <li className="px-3"><Link to={'menu'}>Menu</Link></li>
+                        <li className="px-3"><Link to={'event'}>Events</Link></li>
+                        <li className="px-3"><Link to={'blog'}>Blog</Link></li>
                         <li className="px-3">
                             {
                                 user ?
@@ -77,7 +77,7 @@ const Navbar = () => {
                                         }
                                     </div>
                                     :
-                                    <Link to={'/signin'}>
+                                    <Link to={'signin'}>
                                         <button className="btn bg-custom text-white hover:bg-custom hover:text-white focus:bg-custom focus:text-white border-none outline-none rounded-md px-7">Sign In</button>
                                     </Link>
                             }
@@ -116,7 +116,7 @@ const Navbar = () => {
                                     }
                                 </div>
                                 :
-                                <Link to={'/signin'}>
+                                <Link to={'signin'}>
                                     <button className="btn bg-custom text-white hover:bg-custom hover:text-white focus:bg-custom focus:text-white border-none outline-none rounded-md px-7">Sign In</button>
                                 </Link>
                         }

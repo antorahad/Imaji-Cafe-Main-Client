@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const EventsHome = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        fetch('event.json')
+        fetch('http://localhost:5000/events')
             .then(res => res.json())
             .then(data => setEvents(data))
         AOS.init()
