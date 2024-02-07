@@ -17,8 +17,7 @@ const IndexEvent = () => {
     return (
         <div className="min-h-screen max-w-7xl mx-auto px-5 py-10 flex flex-col gap-5">
             <h1 className="text-4xl md:text-5xl font-bold">Our Celebrations</h1>
-            <p className="hidden md:flex">Imaji Cafe invites you to an exceptional experience. Explore <br /> exquisite flavors, embrace cozy vibes, and create lasting memories.</p>
-            <p className="flex md:hidden">Imaji Cafe invites you to an exceptional experience. Explore exquisite flavors, embrace cozy vibes, and create lasting memories.</p>
+            <p>Explore our upcoming events and be the part of celebrations.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
                 {
                     currentItems.map(item => <FeatureEventHome key={item.id} item={item}></FeatureEventHome>)

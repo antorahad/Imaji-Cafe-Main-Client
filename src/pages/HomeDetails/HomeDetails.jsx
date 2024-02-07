@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const HomeDetails = () => {
     const loadMenuDetails = useLoaderData();
-    const { _id, name, price, discount, description, category } = loadMenuDetails;
+    const { _id, image, name, price, discount, description, category } = loadMenuDetails;
     const discountAmount = price * (discount / 100);
     const hasDiscount = discount > 0;
     const totalPrice = hasDiscount ? (price - discountAmount).toFixed(2) : null;
@@ -11,7 +11,7 @@ const HomeDetails = () => {
         <div className="flex items-center justify-center max-w-7xl mx-auto px-5 py-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-5">
                 <div className="w-full lg:w-1/2">
-                    <img src="https://img.freepik.com/free-photo/cup-coffee-with-drawn-heart_1286-225.jpg?w=996&t=st=1706903268~exp=1706903868~hmac=44961b9d9e71d3f3182d0ff0855c1a6fac9134bd498db7580fa6e79e68fe29f7" alt="Image" />
+                    <img src={image} alt="Image" />
                 </div>
                 <div className="w-full lg:w-1/2 space-y-4">
                     <h1 className="text-3xl font-bold">{name}</h1>
