@@ -68,7 +68,7 @@ const Navbar = () => {
                                                     }
                                                 </li>
                                                 <li className="py-2"><Link to={'/bookedorders'}>Booked Orders</Link></li>
-                                                <li className="py-2"><Link>Booked Events</Link></li>
+                                                <li className="py-2"><Link to={'/bookevents'}>Booked Events</Link></li>
                                                 <li className="py-2">
                                                     <button onClick={logOut}>Sign Out</button>
                                                 </li>
@@ -106,7 +106,7 @@ const Navbar = () => {
                                                 }
                                             </li>
                                             <li className="py-2"><Link to={'/bookedorders'}>Booked Orders</Link></li>
-                                            <li className="py-2"><Link>Booked Events</Link></li>
+                                            <li className="py-2"><Link to={'/bookevents'}>Booked Events</Link></li>
                                             <li className="py-2">
                                                 <button onClick={logOut}>Sign Out</button>
                                             </li>

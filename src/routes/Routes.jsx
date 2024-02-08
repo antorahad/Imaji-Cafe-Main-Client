@@ -12,6 +12,7 @@ import PrivateProvider from "../private/PrivateProvider";
 import BookedOrder from "../pages/BookOrder/BookedOrder";
 import EventDetails from "../pages/EventDetails/EventDetails";
 import OrderEvent from "../pages/OrderEvent/OrderEvent";
+import BookEvent from "../pages/BookEvent/BookEvent";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: 'bookedorders',
         element: <BookedOrder />
+      },
+      {
+        path: 'bookevents',
+        element: <BookEvent/>
       }
     ]
   },
