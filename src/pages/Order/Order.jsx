@@ -46,7 +46,7 @@ const Order = () => {
 
         console.log(newOrder);
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://imaji-server.vercel.app/orders', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

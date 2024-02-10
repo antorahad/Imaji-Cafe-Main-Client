@@ -13,11 +13,14 @@ import BookedOrder from "../pages/BookOrder/BookedOrder";
 import EventDetails from "../pages/EventDetails/EventDetails";
 import OrderEvent from "../pages/OrderEvent/OrderEvent";
 import BookEvent from "../pages/BookEvent/BookEvent";
+import BlogDetails from "../pages/BlogDetails/BlogDetails";
+import Error from "../error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <Error/>,
     children: [
       // Home
       {
@@ -28,44 +31,49 @@ const router = createBrowserRouter([
       {
         path: 'menu',
         element: <IndexMenu />,
-        loader: () => fetch('http://localhost:5000/items')
+        loader: () => fetch('https://imaji-server.vercel.app/items')
       },
       // Home Details
       {
         path: 'homedetails/:id',
         element: <PrivateProvider><HomeDetails /></PrivateProvider>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`https://imaji-server.vercel.app/items/${params.id}`)
       },
       // Order
       {
         path: 'order/:id',
         element: <PrivateProvider><Order /></PrivateProvider>,
-        loader: ({ params }) => fetch(`http://localhost:5000/items/${params.id}`)
+        loader: ({ params }) => fetch(`https://imaji-server.vercel.app/items/${params.id}`)
       },
       // Event 
       {
         path: 'event',
         element: <IndexEvent />,
-        loader: () => fetch('http://localhost:5000/events')
+        loader: () => fetch('https://imaji-server.vercel.app/events')
       },
       // Event details
       {
         path: 'eventdetails/:id',
-        element: <EventDetails/>,
-        loader: ({ params }) => fetch(`http://localhost:5000/events/${params.id}`)
+        element: <PrivateProvider><EventDetails/></PrivateProvider>,
+        loader: ({ params }) => fetch(`https://imaji-server.vercel.app/events/${params.id}`)
 
       },
       // Order Events
       {
         path: 'orderevent/:id',
-        element: <OrderEvent/>,
-        loader: ({ params }) => fetch(`http://localhost:5000/events/${params.id}`)
+        element: <PrivateProvider><OrderEvent/></PrivateProvider>,
+        loader: ({ params }) => fetch(`https://imaji-server.vercel.app/events/${params.id}`)
       },
       // Blog
       {
         path: 'blog',
         element: <IndexBlog />,
-        loader: () => fetch('http://localhost:5000/blogs')
+        loader: () => fetch('https://imaji-server.vercel.app/blogs')
+      },
+      {
+        path: 'blogdetails/:id',
+        element: <BlogDetails/>,
+        loader: ({params}) => fetch(`https://imaji-server.vercel.app/blogs/${params.id}`)
       },
       // Auth
       {
@@ -79,11 +87,11 @@ const router = createBrowserRouter([
       // User 
       {
         path: 'bookedorders',
-        element: <BookedOrder />
+        element: <PrivateProvider><BookedOrder /></PrivateProvider>
       },
       {
         path: 'bookevents',
-        element: <BookEvent/>
+        element: <PrivateProvider><BookEvent/></PrivateProvider>
       }
     ]
   },

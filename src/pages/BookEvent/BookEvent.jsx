@@ -5,7 +5,7 @@ import BookEventData from "./BookEventData";
 const BookEvent = () => {
     const { user } = useContext(AuthContext);
     const [bookOrderEvent, setBookOrderEvent] = useState([]);
-    const url = `http://localhost:5000/orderevents?email=${user?.email}`;
+    const url = `https://imaji-server.vercel.app/orderevents?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -23,7 +23,7 @@ const BookEvent = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/orderevents/${_id}`, {
+                fetch(`https://imaji-server.vercel.app/orderevents/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())

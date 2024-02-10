@@ -20,7 +20,7 @@ const ContactHome = () => {
         }
         console.log(newMessage);
 
-        fetch('http://localhost:5000/messages', {
+        fetch('https://imaji-server.vercel.app/messages', {
             method: "POST",
             headers: {
                 'content-type' : 'application/json'

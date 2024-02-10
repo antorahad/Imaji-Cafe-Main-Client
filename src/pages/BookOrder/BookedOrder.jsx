@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const BookedOrder = () => {
     const { user } = useContext(AuthContext);
     const [bookOrder, setBookOrder] = useState([]);
-    const url = `http://localhost:5000/orders?email=${user?.email}`;
+    const url = `https://imaji-server.vercel.app/orders?email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -24,7 +24,7 @@ const BookedOrder = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/orders/${_id}`, {
+                fetch(`https://imaji-server.vercel.app/orders/${_id}`, {
                     method: "DELETE",
                 })
                     .then(res => res.json())
